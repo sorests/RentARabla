@@ -11,6 +11,6 @@ namespace RentARabla.Models
         public string NationalId { get; set; }
 
         public virtual Person Person { get; set; }
-        public virtual Adress Address { get; set; }
+        public virtual Address Address { get; set; }
     }
 }
