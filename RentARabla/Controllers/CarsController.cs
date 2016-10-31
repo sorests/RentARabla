@@ -83,25 +83,29 @@ namespace RentARabla.Controllers
         }
 
         // GET: Cars/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Car car = db.Cars.Find(id);
+            if (car == null)
+            {
+                return HttpNotFound();
+            }
+            return View(car);
         }
 
         // POST: Cars/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            Car car = db.Cars.Find(id);
+            db.Cars.Remove(car);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         protected new void Dispose()
