@@ -1,7 +1,10 @@
 ﻿using RentARabla.Contexts;
+using RentARabla.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -30,12 +33,18 @@ namespace RentARabla.Controllers
 
         // POST: Cars/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        //public ActionResult Create(FormCollection collection)
+        public ActionResult Create([Bind(Include = "PricePerDay,ManufactureDate,FuelType,Type,Brand,Model")] Car car)
         {
             try
             {
                 // TODO: Add insert logic here
-
+                if (ModelState.IsValid)
+                {
+                    db.Cars.Add(car);
+                    db.SaveChanges();
+                }
                 return RedirectToAction("Index");
             }
             catch
@@ -45,25 +54,32 @@ namespace RentARabla.Controllers
         }
 
         // GET: Cars/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Car car = db.Cars.Find(id);
+            if (car == null)
+            {
+                return HttpNotFound();
+            }
+            return View(car);
         }
 
         // POST: Cars/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,PricePerDay,ManufactureDate,FuelType,Type,Brand,Model")] Car car)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+                if (ModelState.IsValid)
+                {
+                    db.Entry(car).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                return View(car);
         }
 
         // GET: Cars/Delete/5
@@ -86,6 +102,13 @@ namespace RentARabla.Controllers
             {
                 return View();
             }
+        }
+
+        protected new void Dispose()
+        {
+            if (db != null)
+                db.Dispose();
+            base.Dispose();
         }
     }
 }
