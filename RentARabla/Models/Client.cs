@@ -5,9 +5,9 @@ using System.Web;
 
 namespace RentARabla.Models
 {
-    public class Client
+    public class Client : Person
     {
-        public int Id { get; set; }
+
         public int Age { get; set; }
         public string NationalId { get; set; }
 

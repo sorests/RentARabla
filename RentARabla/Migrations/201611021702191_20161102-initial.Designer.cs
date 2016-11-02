@@ -7,13 +7,13 @@ namespace RentARabla.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class DBCreate : IMigrationMetadata
+    public sealed partial class _20161102initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DBCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(_20161102initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610261722357_DBCreate"; }
+            get { return "201611021702191_20161102-initial"; }
         }
         
         string IMigrationMetadata.Source

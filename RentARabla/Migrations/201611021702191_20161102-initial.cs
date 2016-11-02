@@ -3,7 +3,7 @@ namespace RentARabla.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class DBCreate : DbMigration
+    public partial class _20161102initial : DbMigration
     {
         public override void Up()
         {
@@ -20,18 +20,6 @@ namespace RentARabla.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Administrators",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Role = c.Int(nullable: false),
-                        Person_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.People", t => t.Person_Id)
-                .Index(t => t.Person_Id);
-            
-            CreateTable(
                 "dbo.People",
                 c => new
                     {
@@ -42,8 +30,21 @@ namespace RentARabla.Migrations
                         Phone = c.String(),
                         UserName = c.String(),
                         Password = c.String(),
+                        Role = c.Int(),
+                        Age = c.Int(),
+                        NationalId = c.String(),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
+                        Address_Id = c.Int(),
+                        Person_Id = c.Int(),
+                        Person_Id1 = c.Int(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Addresses", t => t.Address_Id)
+                .ForeignKey("dbo.People", t => t.Person_Id)
+                .ForeignKey("dbo.People", t => t.Person_Id1)
+                .Index(t => t.Address_Id)
+                .Index(t => t.Person_Id)
+                .Index(t => t.Person_Id1);
             
             CreateTable(
                 "dbo.Cars",
@@ -60,22 +61,6 @@ namespace RentARabla.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Clients",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Age = c.Int(nullable: false),
-                        NationalId = c.String(),
-                        Address_Id = c.Int(),
-                        Person_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Addresses", t => t.Address_Id)
-                .ForeignKey("dbo.People", t => t.Person_Id)
-                .Index(t => t.Address_Id)
-                .Index(t => t.Person_Id);
-            
-            CreateTable(
                 "dbo.Rentals",
                 c => new
                     {
@@ -89,7 +74,7 @@ namespace RentARabla.Migrations
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Cars", t => t.Car_Id)
-                .ForeignKey("dbo.Clients", t => t.Client_Id)
+                .ForeignKey("dbo.People", t => t.Client_Id)
                 .ForeignKey("dbo.Addresses", t => t.StartLocation_Id)
                 .ForeignKey("dbo.Addresses", t => t.StopLocation_Id)
                 .Index(t => t.Car_Id)
@@ -103,23 +88,21 @@ namespace RentARabla.Migrations
         {
             DropForeignKey("dbo.Rentals", "StopLocation_Id", "dbo.Addresses");
             DropForeignKey("dbo.Rentals", "StartLocation_Id", "dbo.Addresses");
-            DropForeignKey("dbo.Rentals", "Client_Id", "dbo.Clients");
+            DropForeignKey("dbo.Rentals", "Client_Id", "dbo.People");
             DropForeignKey("dbo.Rentals", "Car_Id", "dbo.Cars");
-            DropForeignKey("dbo.Clients", "Person_Id", "dbo.People");
-            DropForeignKey("dbo.Clients", "Address_Id", "dbo.Addresses");
-            DropForeignKey("dbo.Administrators", "Person_Id", "dbo.People");
+            DropForeignKey("dbo.People", "Person_Id1", "dbo.People");
+            DropForeignKey("dbo.People", "Person_Id", "dbo.People");
+            DropForeignKey("dbo.People", "Address_Id", "dbo.Addresses");
             DropIndex("dbo.Rentals", new[] { "StopLocation_Id" });
             DropIndex("dbo.Rentals", new[] { "StartLocation_Id" });
             DropIndex("dbo.Rentals", new[] { "Client_Id" });
             DropIndex("dbo.Rentals", new[] { "Car_Id" });
-            DropIndex("dbo.Clients", new[] { "Person_Id" });
-            DropIndex("dbo.Clients", new[] { "Address_Id" });
-            DropIndex("dbo.Administrators", new[] { "Person_Id" });
+            DropIndex("dbo.People", new[] { "Person_Id1" });
+            DropIndex("dbo.People", new[] { "Person_Id" });
+            DropIndex("dbo.People", new[] { "Address_Id" });
             DropTable("dbo.Rentals");
-            DropTable("dbo.Clients");
             DropTable("dbo.Cars");
             DropTable("dbo.People");
-            DropTable("dbo.Administrators");
             DropTable("dbo.Addresses");
         }
     }
