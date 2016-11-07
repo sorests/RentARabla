@@ -7,13 +7,13 @@ namespace RentARabla.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class _20161102initial : IMigrationMetadata
+    public sealed partial class Initializewithinheritance : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(_20161102initial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initializewithinheritance));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611021702191_20161102-initial"; }
+            get { return "201611021730263_Initialize-with-inheritance"; }
         }
         
         string IMigrationMetadata.Source

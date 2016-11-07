@@ -153,12 +153,13 @@
     <Compile Include="Contexts\RentARablaDBContext.cs" />
     <Compile Include="Controllers\CarsController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\RentalsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611021702191_20161102-initial.cs" />
-    <Compile Include="Migrations\201611021702191_20161102-initial.Designer.cs">
-      <DependentUpon>201611021702191_20161102-initial.cs</DependentUpon>
+    <Compile Include="Migrations\201611021730263_Initialize-with-inheritance.cs" />
+    <Compile Include="Migrations\201611021730263_Initialize-with-inheritance.Designer.cs">
+      <DependentUpon>201611021730263_Initialize-with-inheritance.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
@@ -184,7 +185,11 @@
     <Content Include="Views\Cars\Create.cshtml" />
     <Content Include="Views\Cars\Edit.cshtml" />
     <Content Include="Views\Cars\Delete.cshtml" />
+    <Content Include="Views\Rentals\Index.cshtml" />
     <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
+    <Content Include="Views\Clients\Edit.cshtml" />
+    <Content Include="Views\Clients\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -197,8 +202,8 @@
     <Folder Include="Upload\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611021702191_20161102-initial.resx">
-      <DependentUpon>201611021702191_20161102-initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611021730263_Initialize-with-inheritance.resx">
+      <DependentUpon>201611021730263_Initialize-with-inheritance.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
