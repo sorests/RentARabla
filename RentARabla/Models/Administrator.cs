@@ -6,8 +6,9 @@ using System.Web;
 
 namespace RentARabla.Models
 {
-    public class Administrator
+    public class Administrator : Person
     {
+
         public Role Role { get; set; }
 
         public virtual Person Person { get; set; }

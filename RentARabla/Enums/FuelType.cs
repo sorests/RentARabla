@@ -4,6 +4,7 @@
     {
         Diesel,
         Petrol,
-        Gas
+        Gas,
+        Electric
     }
 }
