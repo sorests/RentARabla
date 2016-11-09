@@ -1,0 +1,87 @@
+[33mcommit 646b5e2502a53ec1ab7e29e99c0e56f4a014de08[m
+Merge: ed535d7 65cada9
+Author: djmonster14 <djmonster14@yahoo.com>
+Date:   Wed Nov 9 18:42:59 2016 +0200
+
+    Merge pull request #1 from sorests/master
+    
+    merged
+
+[33mcommit 65cada94e19838da81c26af6d321e7a26eded886[m
+Author: sorests <sorests@yahoo.com>
+Date:   Mon Nov 7 16:39:31 2016 +0200
+
+    Working on controlers
+
+[33mcommit 5744f8c88c28573da0fa458e26b2412bf0532bdf[m
+Author: sorests <sorests@yahoo.com>
+Date:   Wed Nov 2 19:16:51 2016 +0200
+
+    Added inheritance
+
+[33mcommit a993d19d66305b2461604521b04cce9f4a82450c[m
+Author: sorests <sorests@yahoo.com>
+Date:   Mon Oct 31 20:31:22 2016 +0200
+
+    Delete car method
+
+[33mcommit 3b2c7e31ee4bd9759e0c21325ebe340e020d4da1[m
+Author: sorests <sorests@yahoo.com>
+Date:   Mon Oct 31 19:45:11 2016 +0200
+
+    CarsController functions and views
+
+[33mcommit 8055c1e302f41e0b3657b028e204f20c447cbc40[m
+Author: sorests <sorests@yahoo.com>
+Date:   Wed Oct 26 21:06:46 2016 +0300
+
+    Car view index
+
+[33mcommit 4a2e57ca2dc56d4741c6b20b5d31f5242fe99dee[m
+Author: sorests <sorests@yahoo.com>
+Date:   Wed Oct 26 20:25:48 2016 +0300
+
+    Enable-Migration to localdb temporary
+
+[33mcommit 13fc6839bc777eb81e150e3da3eac312335c0012[m
+Author: sorests <sorests@yahoo.com>
+Date:   Wed Oct 26 20:17:30 2016 +0300
+
+    Updated Administrators and Clients with Key; enable-migrations
+    
+    Updated Administrators and Clients with Key
+    Enable-Migrations -projectname RentARabla -force
+
+[33mcommit 9be573d761931874f00020b4f7eff0e5a5a1398b[m
+Author: sorests <sorests@yahoo.com>
+Date:   Wed Oct 26 19:28:54 2016 +0300
+
+    Context and EntityFramework add
+    
+    Context and EntityFramework add
+
+[33mcommit 7e4c1a4c2fde9b2a469f7a3d7a2bd0159cd53a08[m
+Author: sorests <sorests@yahoo.com>
+Date:   Wed Oct 26 19:06:24 2016 +0300
+
+    Removed insight file
+    
+    Removed insight file which throw error at built
+
+[33mcommit ed535d767356f2de69aacc6f5ef2f7f7c9c133c6[m
+Author: Cristi! <Cristi!@CRISTI>
+Date:   Mon Oct 24 20:53:16 2016 +0300
+
+    Add project files.
+
+[33mcommit 961a53aeaeface82ee639c18ff91fc191352c751[m
+Author: Cristi! <Cristi!@CRISTI>
+Date:   Mon Oct 24 20:53:11 2016 +0300
+
+    Add .gitignore and .gitattributes.
+
+[33mcommit 6a3abe2dcb10c567f18af4bfb7663abc29d217dd[m
+Author: djmonster14 <djmonster14@yahoo.com>
+Date:   Mon Oct 24 20:58:21 2016 +0300
+
+    Initial commit

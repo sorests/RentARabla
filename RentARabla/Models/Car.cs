@@ -9,7 +9,7 @@ namespace RentARabla.Models
     public class Car
     {
         public int Id { get; set; }
-        public double PricePerDay { get; set; }
+        public Price PricePerDay { get; set; }
         public DateTime ManufactureDate { get; set; }
         public FuelType FuelType { get; set; }
         public CarType Type { get; set; }

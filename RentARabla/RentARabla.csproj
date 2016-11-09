@@ -154,6 +154,7 @@
     <Compile Include="Controllers\CarsController.cs" />
     <Compile Include="Controllers\ClientsController.cs" />
     <Compile Include="Controllers\RentalsController.cs" />
+    <Compile Include="Enums\Currency.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,6 +171,7 @@
     <Compile Include="Enums\CarType.cs" />
     <Compile Include="Enums\FuelType.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Price.cs" />
     <Compile Include="Models\Rental.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Enums\Role.cs" />
@@ -190,6 +192,8 @@
     <Content Include="Views\Clients\Create.cshtml" />
     <Content Include="Views\Clients\Edit.cshtml" />
     <Content Include="Views\Clients\Delete.cshtml" />
+    <Content Include="Views\Rentals\Login.cshtml" />
+    <Content Include="Views\Rentals\Authenticate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

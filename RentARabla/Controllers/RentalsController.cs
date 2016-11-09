@@ -87,5 +87,22 @@ namespace RentARabla.Controllers
                 return View();
             }
         }
+
+        // GET: Rentals/Login/6
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        //TODO: SET: Login()
+
+
+        // GET: Rentals/Authenticate/
+        public ActionResult Authenticate()
+        {
+            return View();
+        }
+
+        //TODO: SET: Authenticate()
     }
 }
