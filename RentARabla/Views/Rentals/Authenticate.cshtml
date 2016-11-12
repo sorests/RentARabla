@@ -1,20 +1,19 @@
 ﻿@model RentARabla.Models.Client
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Authenticate";
 }
 
-<h2>Create</h2>
+<h2>Authenticate</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Client</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
         <div class="form-group">
             @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -81,7 +80,10 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-1">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+            <div class="col-md-1">
+                <input type="button" value="Cancel" class="btn btn-default" onclick="resetForm()" />
             </div>
         </div>
     </div>
@@ -94,3 +96,4 @@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/scripts/myJavaScript.js"></script>
