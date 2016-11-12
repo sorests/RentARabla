@@ -1,5 +1,7 @@
 namespace RentARabla.Migrations
 {
+    using Enums;
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -9,23 +11,36 @@ namespace RentARabla.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(RentARabla.Contexts.RentARablaDBContext context)
+        protected override void Seed(Contexts.RentARablaDBContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            SeedAdmin(context);
+        }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+        private void SeedAdmin(Contexts.RentARablaDBContext context)
+        {
+            var admin = context.Administrators.FirstOrDefault();
+            if (admin != null)
+                return;
+
+            var person = new Person
+            {
+                FirstName = "Admin",
+                LastName = "Admin",
+                UserName = "admin",
+                Password = "admin",
+                Email = "admin@mail.com",
+                Phone = "0721341290"
+            };
+
+            context.Administrators.Add(
+                new Administrator
+                {
+                    Role = Role.Admin,
+                    Person = person
+                });
         }
     }
 }

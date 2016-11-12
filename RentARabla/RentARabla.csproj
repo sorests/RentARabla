@@ -146,6 +146,7 @@
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\myJavaScript.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +162,22 @@
     <Compile Include="Migrations\201611021730263_Initialize-with-inheritance.cs" />
     <Compile Include="Migrations\201611021730263_Initialize-with-inheritance.Designer.cs">
       <DependentUpon>201611021730263_Initialize-with-inheritance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611121127162_Added_Admin.cs" />
+    <Compile Include="Migrations\201611121127162_Added_Admin.Designer.cs">
+      <DependentUpon>201611121127162_Added_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611121131361_Added_Adminsadasd.cs" />
+    <Compile Include="Migrations\201611121131361_Added_Adminsadasd.Designer.cs">
+      <DependentUpon>201611121131361_Added_Adminsadasd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611121132446_Added_Adminsadasdas.cs" />
+    <Compile Include="Migrations\201611121132446_Added_Adminsadasdas.Designer.cs">
+      <DependentUpon>201611121132446_Added_Adminsadasdas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611121135316_Added_Adm.cs" />
+    <Compile Include="Migrations\201611121135316_Added_Adm.Designer.cs">
+      <DependentUpon>201611121135316_Added_Adm.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrator.cs" />
@@ -208,6 +225,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611021730263_Initialize-with-inheritance.resx">
       <DependentUpon>201611021730263_Initialize-with-inheritance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611121127162_Added_Admin.resx">
+      <DependentUpon>201611121127162_Added_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611121131361_Added_Adminsadasd.resx">
+      <DependentUpon>201611121131361_Added_Adminsadasd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611121132446_Added_Adminsadasdas.resx">
+      <DependentUpon>201611121132446_Added_Adminsadasdas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611121135316_Added_Adm.resx">
+      <DependentUpon>201611121135316_Added_Adm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
